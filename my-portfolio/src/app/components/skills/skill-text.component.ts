@@ -28,13 +28,13 @@ import { TiltDirective } from '../../directives/tilt.directive';
         // margin: 0 0 100px 0;;
       }
       skill-text h6{
-      border: 1px solid #7042f77b;
-      border-radius: 12px;
-      height: auto;
-      color: #b49bff;
-      padding: 16px;
+        border: 1px solid #7042f77b;
+        border-radius: 12px;
+        height: auto;
+        color: #b49bff;
+        padding: 16px;
       
-    }
+      }
     skill-text h4{
       font-family: "Dancing Script", cursive;
       font-optical-sizing: auto;
