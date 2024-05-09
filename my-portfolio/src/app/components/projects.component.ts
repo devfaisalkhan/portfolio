@@ -125,7 +125,7 @@ export class ProjectsComponent implements OnInit {
         './assets/images/ama5.png',
       ],
         title: 'Amanah',
-      description: 'Angular Angular AngularAngularAngularAngular',
+      description: 'Share your ride, share the cost. Post your travel plans and connect with others who need a lift.',
     },
     {
       images: [
@@ -138,7 +138,7 @@ export class ProjectsComponent implements OnInit {
         './assets/images/sah8.png',
       ],
        title: 'Sahala',
-      description: 'Angular Angular AngularAngularAngularAngular',
+      description: 'Your pocket-sized mall. Browse, shop, and save on everything from gadgets to fashion.',
     },
     // {
     //   images: [
