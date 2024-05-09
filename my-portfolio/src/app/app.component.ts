@@ -1,13 +1,49 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationStart, Router, RouterOutlet } from '@angular/router';
+import { StarsBgComponent } from './components/stars-bg.componen';
+import { NavbarComponent } from './components/navbar.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [RouterOutlet, NavbarComponent, StarsBgComponent],
 })
 export class AppComponent {
-  title = 'my-portfolio';
+  existingRouteUrl: any = null;
+
+  constructor(private router: Router) {
+    this.initializeWeb();
+  }
+
+  initializeWeb() {
+    this.router.events.subscribe(async (val) => {
+      if (val instanceof NavigationStart) {
+        const urls = val.url.split('/').filter((u) => u.length);
+        if (urls.length) {
+          this.existingRouteUrl = val.url;
+        }
+      }
+    });
+
+    this._setDefaults();
+  }
+
+  private async _setDefaults() {
+    if (this.existingRouteUrl) {
+      await this._navigateTo(this.existingRouteUrl);
+      return;
+    }
+
+    // await this._navigateTo('/home');
+  }
+
+  private async _navigateTo(path: string, args?: string, replaceUrl = false) {
+    if (!args) {
+      await this.router.navigate([path], { replaceUrl: replaceUrl });
+    } else {
+      await this.router.navigate([path, args], { replaceUrl: replaceUrl });
+    }
+  }
 }
