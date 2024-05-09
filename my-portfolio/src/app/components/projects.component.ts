@@ -1,18 +1,27 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'projects',
   standalone: true,
   imports: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA ],
   encapsulation: ViewEncapsulation.None,
   template: `
+  <div class="swiper">
     <h1 class="text-center m-5">My projects</h1>
-    <div class="row projects ">
+    <div class="row projects" >
+
       @for (proj of projects; track $index) {
-      <div class="col-5">
+      <div class="col-4">
         <div class="card bg-dark m-4" style="">
-          <img class="card-img-top " [src]="proj.img" alt="Card image cap" />
           <div class="card-body text-white">
+          <swiper-container pagination="true">
+            @for(img of proj.images; track $index ) {
+              <swiper-slide>
+                <img [src]="img" alt="">
+              </swiper-slide>
+            }
+          </swiper-container>
             <h5 class="card-title">{{ proj.title }}</h5>
             <p class="card-text">
               {{ proj.description }}
@@ -22,8 +31,41 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
       </div>
       }
     </div>
+  </div>
+
   `,
   styles: `
+  projects{
+    z-index: 9999;
+
+  }
+  .swiper{
+    z-index: 9999;
+  }
+ 
+  .card{
+    .card-body{
+    padding: 0;
+    swiper-container {
+      swiper-slide{
+        height: 300px;
+        img{
+          object-fit: contain;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  
+  }
+
+  .card-title{
+        padding: 10px;
+      }
+    .card-text{
+        padding: 10px;
+    }
+  }
     h1{
       background: linear-gradient(to right, #a855f7, #06b6d4);
       -webkit-background-clip: text; /* For Safari */
@@ -31,11 +73,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
       color: transparent;
     }
     .projects{
-        overflow-x: scroll;
+        overflow-x: auto;
         flex-wrap: nowrap;
-        z-index: 9999;
         position: relative;
-   
+        z-index: 99999;
+
+    
         ::-webkit-scrollbar {
               display: none;
           }
@@ -46,13 +89,14 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
           /* For Firefox */
           overflow: -moz-scrollbars-none;
         .card{
+          cursor: pointer;
         }
     }
 
     
 
       @media only screen and (max-width: 786px) {
-        .col-5{
+        .col-4{
           width: 80%;
         }
       }    
@@ -61,31 +105,63 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class ProjectsComponent implements OnInit {
   projects = [
     {
-      img: './assets/images/frame.png',
+      images: [
+        './assets/images/int-1.png',
+        './assets/images/int-2.png',
+        './assets/images/int3.png',
+        './assets/images/int4.png',
+        './assets/images/int5.png',
+
+      ],
       title: 'Intellishuff',
       description: 'Intellishuff, the ultimate tool for generating unique, randomized MCQs.',
     },
     {
-      img: './assets/images/frame.png',
-      title: 'Amanah',
+      images: [
+        './assets/images/ama1.png',
+        './assets/images/ama2.png',
+        './assets/images/ama3.png',
+        './assets/images/ama4.png',
+        './assets/images/ama5.png',
+      ],
+        title: 'Amanah',
       description: 'Angular Angular AngularAngularAngularAngular',
     },
     {
-      img: './assets/images/frame.png',
-      title: 'Sahala',
+      images: [
+        './assets/images/sah2.png',
+        './assets/images/sah3.png',
+        './assets/images/sah4.png',
+        './assets/images/sah5.png',
+        './assets/images/sah6.png',
+        './assets/images/sah7.png',
+        './assets/images/sah8.png',
+      ],
+       title: 'Sahala',
       description: 'Angular Angular AngularAngularAngularAngular',
     },
-    {
-      img: './assets/images/frame.png',
-      title: 'Bindawood',
-      description: 'Angular Angular AngularAngularAngularAngular',
-    },
-    {
-      img: './assets/images/frame.png',
-      title: 'Choisy',
-      description: 'Angular Angular AngularAngularAngularAngular',
-    }
+    // {
+    //   images: [
+    //     './assets/images/frame.png',
+    //     './assets/images/frame.png',
+    //     './assets/images/frame.png',
+    //     './assets/images/frame.png',
+    //   ],
+    //   title: 'Bindawood',
+    //   description: 'Angular Angular AngularAngularAngularAngular',
+    // },
+    // {
+    //   images: [
+    //     './assets/images/frame.png',
+    //     './assets/images/frame.png',
+    //     './assets/images/frame.png',
+    //     './assets/images/frame.png',
+    //   ],
+    //   title: 'Choisy',
+    //   description: 'Angular Angular AngularAngularAngularAngular',
+    // }
   ];
   constructor() {}
   ngOnInit(): void {}
+
 }

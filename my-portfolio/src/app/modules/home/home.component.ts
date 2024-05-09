@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { SkillsComponent } from '../../components/skills/skills.component';
 
@@ -6,9 +6,9 @@ import { CardsVideoComponent } from '../../components/skills/skills-video.compon
 import { SkillTextComponent } from '../../components/skills/skill-text.component';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { EncryptionComponent } from '../../components/encryption/encryption.component';
+import { ProjectsComponent } from '../../components/projects.component';
 
 import * as AOS from 'aos';
-import { ProjectsComponent } from '../../components/projects.component';
 @Component({
   selector: 'home',
   standalone: true,
@@ -26,6 +26,7 @@ import { ProjectsComponent } from '../../components/projects.component';
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements AfterViewInit {
+
   constructor() {}
   ngAfterViewInit() {
     AOS.init({});

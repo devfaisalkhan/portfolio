@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { StarsBgComponent } from './components/stars-bg.componen';
 import { NavbarComponent } from './components/navbar.component';

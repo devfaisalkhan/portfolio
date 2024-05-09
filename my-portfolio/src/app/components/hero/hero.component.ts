@@ -14,6 +14,9 @@ import TypeIt from 'typeit';
     <div class="row d-flex justify-content-center align-items-center">
       <div class="title col-md-6">
         <h2 class="tagline-title"></h2>
+        <p class="about ">
+          I'm a Full Stack Software Engineer with experience in Webiste, Mobile and software development.
+        </p>
       </div>
       <div class="col-md-6" data-aos="fade-left">
         <div class="image">
@@ -42,13 +45,15 @@ import TypeIt from 'typeit';
         .image {
           width: 100% !important;
           z-index: 999 !important;
-
         }
-
+      .about{
+        margin-bottom: 20px;
+          margin-left: 20px;
+          color: #999;
+      }
         .tagline-title {
           font-size: 3rem;
           margin-bottom: 20px;
-          height: 200px;
           margin-left: 20px;
 
           .front-end, .back-end {
@@ -72,19 +77,26 @@ import TypeIt from 'typeit';
 export class HeroComponent implements AfterViewInit {
   constructor() {}
   ngAfterViewInit(): void {
-    // new TypeIt('.tagline-title', {
-    //   loop: true,
-    //   strings: [
     new TypeIt('.tagline-title', {
-      afterStep: function (instance: any) {
+      beforeStep:  function (instance: any) {
         instance.getElement().style.color = '#fff';
+        instance.getElement().style.fontWeight = 'bold';
       },
       speed: 50,
-      startDelay: 900,
+      startDelay: 600,
     })
-      .type('Innovative frontend ', { delay: 100 })
-      .type('with robust backend.', { delay: 350 })
-      .go();
+      .type('Providing')
+      .type(`<span style=" background: linear-gradient(to right, #a855f7, #06b6d4);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;">
+        the best
+        </span>`
+      )
+      .type('project experience.')
+    
+    .go();
+
 
     // new TypeIt('.tagline-title', {
     //   afterStep: function (instance: any) {

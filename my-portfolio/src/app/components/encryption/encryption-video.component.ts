@@ -25,7 +25,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
        encryption-video .lock{
         z-index: 9;
-
         encryption-video img{
         }
        }
