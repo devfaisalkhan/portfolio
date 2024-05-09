@@ -59,7 +59,6 @@ import { TiltDirective } from '../../directives/tilt.directive';
   styles: `
       skills{
         .skills{
-          height: 100vh !important;
           flex-direction: column;
           .images{
             flex-wrap: wrap !important;
