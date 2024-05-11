@@ -9,6 +9,7 @@ import { EncryptionComponent } from '../../components/encryption/encryption.comp
 import { ProjectsComponent } from '../../components/projects.component';
 
 import * as AOS from 'aos';
+import { ContactComponent } from '../../components/contact.component';
 @Component({
   selector: 'home',
   standalone: true,
@@ -20,6 +21,7 @@ import * as AOS from 'aos';
     EncryptionComponent,
     HeroComponent,
     ProjectsComponent,
+    ContactComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

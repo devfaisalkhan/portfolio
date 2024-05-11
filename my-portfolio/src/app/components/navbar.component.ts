@@ -27,7 +27,7 @@ import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/co
           id="navbarSupportedContent"
         >
           <ul class="navbar-nav d-flex justify-content-between align-items-center w-50 w-5" >
-            <li class="nav-item">
+            <li class="nav-item" (click)="scrollToElement('about')">
               <a class="nav-link " aria-current="page">About me</a>
             </li>
             <li class="nav-item" (click)="scrollToElement('skills')">
@@ -35,6 +35,10 @@ import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/co
             </li>
             <li class="nav-item" (click)="scrollToElement('projects')">
               <a class="nav-link " aria-current="page">Projects</a>
+            </li>
+
+            <li class="nav-item" (click)="scrollToElement('contact')">
+              <a class="nav-link " aria-current="page">Contact</a>
             </li>
           </ul>
         </div>
@@ -47,7 +51,7 @@ import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/co
       background-color: #03001417 !important;
       backdrop-filter: blur(20px);
       color: #fff !important;
-      // z-index: 99999;
+      z-index: 99999;
 
     }
     .navbar-brand{
@@ -105,27 +109,10 @@ export class NavbarComponent {
 
   
   scrollToElement(section: string): void {
-    console.log(this.skills);
-    
-    switch (section) {
-     
-      case 'skills':
-        const skillsElement = document.getElementById('skills');
-        if (skillsElement) {
-          skillsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }       
-      break;
-
-      case 'projects':
-        const projectsElement = document.getElementById('projects');
-        if (projectsElement) {
-          projectsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }       
-      break;
-
-      default:
-        break;
-    }
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }    
   }
 }
  

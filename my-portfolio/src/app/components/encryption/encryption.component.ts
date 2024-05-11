@@ -32,7 +32,7 @@ import { EncryptionVideoComponent } from './encryption-video.component';
       <encryption-video></encryption-video>
 
       <span
-        class="text-center font-weight-normal position-absolute bottom-0 start-0 end-0 z-1"
+        class="text-center font-weight-bold position-absolute bottom-0 start-0 end-0 z-1"
         >Secure your data with end to end encryption</span
       >
     </div>

@@ -78,7 +78,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit, ViewEncapsulation } from '@a
         position: relative;
         z-index: 99999;
 
-    
         ::-webkit-scrollbar {
               display: none;
           }
