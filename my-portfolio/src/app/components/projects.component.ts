@@ -8,14 +8,16 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit, ViewEncapsulation } from '@a
   encapsulation: ViewEncapsulation.None,
   template: `
   <div class="swiper">
-    <h1 class="text-center m-5">My projects</h1>
+    <h1 class="text-center m-5" data-aos="flip-up">My projects</h1>
     <div class="row projects" >
 
       @for (proj of projects; track $index) {
       <div class="col-4">
-        <div class="card bg-dark m-4" style="">
+        <div class="card bg-dark m-4" style="" data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000">
           <div class="card-body text-white">
-          <swiper-container pagination="true">
+          <swiper-container pagination="true" >
             @for(img of proj.images; track $index ) {
               <swiper-slide>
                 <img [src]="img" alt="">

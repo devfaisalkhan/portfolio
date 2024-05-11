@@ -11,6 +11,7 @@ import { EncryptionVideoComponent } from './encryption-video.component';
       class="secure position-relative d-flex justify-content-center align-items-center"
     >
       <span
+      data-aos="flip-up"
         class="text-center font-weight-bold position-absolute top-0  start-0 end-0 z-1"
         >Perfromance
         <span class="and"> & </span>
@@ -32,6 +33,7 @@ import { EncryptionVideoComponent } from './encryption-video.component';
       <encryption-video></encryption-video>
 
       <span
+      data-aos="flip-down"
         class="text-center font-weight-bold position-absolute bottom-0 start-0 end-0 z-1"
         >Secure your data with end to end encryption</span
       >

@@ -14,7 +14,7 @@ import TypeIt from 'typeit';
     <div class="row d-flex justify-content-center align-items-center">
       <div class="title col-md-6">
         <h2 class="tagline-title"></h2>
-        <p class="about ">
+        <p class="about" data-aos="fade-right">
           I'm a Full Stack Software Engineer with experience in Webiste, Mobile and software development.
         </p>
       </div>

@@ -103,11 +103,7 @@ import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/co
   `,
 })
 export class NavbarComponent {
-  @ViewChild('skills') skills!: ElementRef;
-
   constructor() {}
-
-  
   scrollToElement(section: string): void {
     const element = document.getElementById(section);
     if (element) {

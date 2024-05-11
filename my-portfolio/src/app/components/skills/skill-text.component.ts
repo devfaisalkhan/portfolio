@@ -7,11 +7,12 @@ import { TiltDirective } from '../../directives/tilt.directive';
   imports: [TiltDirective],
   encapsulation: ViewEncapsulation.None,
   template: `
-    <section class="m-5 position-relative">
+    <section class="m-5 position-relative" >
       <div
         class="tag text-center d-flex align-items-center justify-content-center"
       >
         <h6
+          data-aos="fade-up-left"
           tilt
           class="d-flex align-items-center position-relative justify-content-center m-2"
         >
@@ -19,8 +20,8 @@ import { TiltDirective } from '../../directives/tilt.directive';
           Think better with Angular17
         </h6>
       </div>
-      <h2 class="text-center m-2">Making apps with modern technologies</h2>
-      <h4 class="text-center m-2">Never miss a task deadline on idea</h4>
+      <h2 class="text-center m-2" data-aos="fade-down-right">Making apps with modern technologies</h2>
+      <h4 class="text-center m-2" data-aos="fade-down-left">Never miss a task deadline on idea</h4>
     </section>
   `,
   styles: `
