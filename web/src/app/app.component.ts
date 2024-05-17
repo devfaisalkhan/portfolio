@@ -2,13 +2,14 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { StarsBgComponent } from './components/stars-bg.componen';
 import { NavbarComponent } from './components/navbar.component';
+import { AboutComponent } from './components/about/about.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, StarsBgComponent],
+  imports: [RouterOutlet, NavbarComponent, StarsBgComponent, AboutComponent],
 })
 export class AppComponent {
   existingRouteUrl: any = null;

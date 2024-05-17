@@ -10,6 +10,7 @@ import { ProjectsComponent } from '../../components/projects.component';
 
 import * as AOS from 'aos';
 import { ContactComponent } from '../../components/contact.component';
+import { AboutComponent } from '../../components/about/about.component';
 @Component({
   selector: 'home',
   standalone: true,
@@ -21,7 +22,8 @@ import { ContactComponent } from '../../components/contact.component';
     EncryptionComponent,
     HeroComponent,
     ProjectsComponent,
-    ContactComponent
+    ContactComponent,
+    AboutComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

@@ -53,7 +53,6 @@ import { TiltDirective } from '../../directives/tilt.directive';
           height="60"
           class="rounded "
           loading="lazy"
-
         />
         }
       </div>
