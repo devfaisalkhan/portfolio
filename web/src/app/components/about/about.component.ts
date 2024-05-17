@@ -14,9 +14,13 @@ declare var createTree: any;
 })
 
 export class AboutComponent implements OnInit {
-  constructor(private elRef: ElementRef) {}
+  constructor() {}
 
   ngOnInit(): void {
+    new createTree();
+  }
+
+  onRecenterClicked() {
     new createTree();
   }
 
