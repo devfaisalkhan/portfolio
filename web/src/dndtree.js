@@ -1,6 +1,4 @@
-
 function createTree() {
-
     treeJSON = d3.json('interests.json', function (treeData) {
         console.log("d3 called");
 
