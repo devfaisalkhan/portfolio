@@ -18,7 +18,7 @@ jobs:
           node-version: 20
 
       - name: Build Angular app to prod
-        working-directory: my-portfolio
+        working-directory: web
         run: npm install && npm run build:prod
 
       - name: Deploy to GitHub Pages
