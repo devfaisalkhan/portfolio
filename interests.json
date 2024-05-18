@@ -1,0 +1,31 @@
+{
+    "name": "interests",
+    "children": [
+        {
+            "name": "sports",
+            "children": [
+                {
+                    "name": "Cricket"
+                },
+                {
+                    "name": "Badminton "
+                }
+            ]
+        },
+        {
+            "name": "poetry",
+            "children": [
+                {
+                    "name": "Ahmad Faraz",
+                    "children": [
+                    ]
+                },
+                {
+                    "name": "John Elia",
+                    "children": [
+                    ]
+                }
+            ]
+        }
+    ]
+}
