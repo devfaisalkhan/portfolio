@@ -18,7 +18,7 @@ import TypeIt from 'typeit';
           I'm a Full Stack Software Engineer with experience in Webiste, Mobile and software development.
         </p>
       </div>
-      <div class="col-md-6" data-aos="fade-left">
+      <div class="col-md-6" data-aos="fade-left" style="z-index: 9;">
         <div class="image">
           <img
             tilt

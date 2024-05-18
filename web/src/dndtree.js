@@ -1,10 +1,6 @@
 function createTree() {
     treeJSON = d3.json('interests.json', function (treeData) {
-        console.log("d3 called");
-
-        console.log('treeData',treeData);
-
-        console.log("running");
+     
         // Calculate total nodes, max label length
         var totalNodes = 0;
         var maxLabelLength = 0;
@@ -37,8 +33,9 @@ function createTree() {
                 return [d.y, d.x];
             });
 
-        // A recursive helper function for performing some setup by walking through all nodes
+            
 
+        // A recursive helper function for performing some setup by walking through all nodes
         function visit(parent, visitFn, childrenFn) {
             if (!parent) return;
 
@@ -110,7 +107,6 @@ function createTree() {
 
         }
         function zoom() {
-
             svgGroup.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
         }
 
@@ -166,8 +162,6 @@ function createTree() {
             .attr("height", "100%")
             .attr("class", "overlay")
             .call(zoomListener);
-
-
 
         // Helper functions for collapsing and expanding nodes.
 
@@ -455,6 +449,3 @@ function createTree() {
         centerNode(root);
     });
 }
-
-
-
