@@ -10,7 +10,7 @@ import { ProjectsComponent } from '../../components/projects.component';
 
 import * as AOS from 'aos';
 import { ContactComponent } from '../../components/contact.component';
-import { AboutComponent } from '../../components/about/about.component';
+import { AboutComponent } from '../../components/about.component';
 @Component({
   selector: 'home',
   standalone: true,

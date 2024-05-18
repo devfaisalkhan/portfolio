@@ -2,7 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { StarsBgComponent } from './components/stars-bg.componen';
 import { NavbarComponent } from './components/navbar.component';
-import { AboutComponent } from './components/about/about.component';
+import { AboutComponent } from './components/about.component';
 
 @Component({
   selector: 'app-root',
