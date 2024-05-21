@@ -29,9 +29,7 @@ import { FloatingManComponent } from '../flaoting-man.component';
             height="650"
           /> -->
         <floating-man></floating-man>
-
         </div>
-
       </div>
     </div>
   </section>`,

@@ -14,7 +14,7 @@ import { ParallaxService } from '../services/parallax.service';
     .parallax {
     width: 100%;
     height: 100vh;
-    background-image: url("/assets/images/background_illus1.svg");
+    background-image: url('/assets/images/background_illus1.svg');
     background-size: 40vh auto;
     animation: shake-lr 17s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite both;
     background-repeat: no-repeat;
