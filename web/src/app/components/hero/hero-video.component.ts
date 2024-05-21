@@ -23,7 +23,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       .video {
         video {
           width: 100%;
-          top: -300px;
+          top: -370px;
         }
       }
 
