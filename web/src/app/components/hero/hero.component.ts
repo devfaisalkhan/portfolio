@@ -3,13 +3,15 @@ import { HeroVideoComponent } from './hero-video.component';
 import { NgOptimizedImage } from '@angular/common';
 import { TiltDirective } from '../../directives/tilt.directive';
 import TypeIt from 'typeit';
+import { FloatingManComponent } from '../flaoting-man.component';
 
 @Component({
   selector: 'hero',
   standalone: true,
-  imports: [HeroVideoComponent, NgOptimizedImage, TiltDirective],
+  imports: [HeroVideoComponent, NgOptimizedImage, TiltDirective, FloatingManComponent],
   encapsulation: ViewEncapsulation.None,
-  template: ` <section class="hero"> 
+  template: `
+   <section class="hero"> 
     <hero-video></hero-video>
     <div class="row d-flex justify-content-center align-items-center">
       <div class="title col-md-6">
@@ -20,14 +22,16 @@ import TypeIt from 'typeit';
       </div>
       <div class="col-md-6" data-aos="fade-left" style="z-index: 9;">
         <div class="image">
-          <img
+          <!-- <img
             tilt
             [ngSrc]="'./assets/images/icons.svg'"
             width="650"
             height="650"
-            decoding="sync"
-          />
+          /> -->
+        <floating-man></floating-man>
+
         </div>
+
       </div>
     </div>
   </section>`,
@@ -37,7 +41,10 @@ import TypeIt from 'typeit';
       .hero {
         margin-top: 100px;
         position: relative;
-        
+        .row{
+          height: 100vh;
+
+        }
         .title {
           z-index: 99;
         }

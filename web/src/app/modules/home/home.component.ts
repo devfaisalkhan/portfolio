@@ -11,6 +11,7 @@ import { ProjectsComponent } from '../../components/projects.component';
 import * as AOS from 'aos';
 import { ContactComponent } from '../../components/contact.component';
 import { AboutComponent } from '../../components/about.component';
+import { FloatingManComponent } from '../../components/flaoting-man.component';
 @Component({
   selector: 'home',
   standalone: true,
@@ -23,7 +24,8 @@ import { AboutComponent } from '../../components/about.component';
     HeroComponent,
     ProjectsComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    FloatingManComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
