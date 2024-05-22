@@ -40,6 +40,10 @@ import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/co
             <li class="nav-item" (click)="scrollToElement('contact')">
               <a class="nav-link " aria-current="page">Contact</a>
             </li>
+
+            <li class="nav-item" (click)="onResumeClicked()">
+              <a class="nav-link " aria-current="page">Resume</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -109,6 +113,10 @@ export class NavbarComponent {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }    
+  }
+
+  onResumeClicked() {
+    window.open('https://drive.google.com/file/d/1BiyB-OCtl1wxSEIxnXkPsRiV2YyOpheg/view?usp=sharing');
   }
 }
  
