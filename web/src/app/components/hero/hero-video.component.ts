@@ -7,7 +7,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="video d-flex w-100 h-100">
-      <video
+      <!-- <video
         class="object-fit-cover w-100 h-100 position-absolute  bottom-0 start-0 end-0"
         [autoplay]="true"
         [muted]="true"
@@ -15,13 +15,16 @@ import { Component, ViewEncapsulation } from '@angular/core';
         [playsInline]="true"
         preload="true"
       >
-        <source src="./assets/videos/blackhole.webm" type="video/webm" />
-      </video>
+        <source src="./assets/videos/blackhole.gif" type="video/webm" />
+      </video> -->
+
+      <img class="object-fit-cover w-100 h-100 position-absolute  bottom-0 start-0 end-0" src="./assets/videos/blackhole.gif" alt="GIF as Video">
+
     </div>
   `,
   styles: `
       .video {
-        video {
+        img {
           width: 100%;
           top: -370px;
         }
