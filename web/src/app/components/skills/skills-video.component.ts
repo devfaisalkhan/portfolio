@@ -4,7 +4,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'skills-video',
   standalone: true,
   imports: [],
-  encapsulation: ViewEncapsulation.None,
   template: `
     <div class="video d-flex justify-content-center align-items-center w-100">
       <!-- <video
@@ -20,7 +19,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
       <img class="object-fit-cover w-100 h-100 position-absolute top-0 bottom-0 start-0 end-0" 
         src="./assets/videos/cards-video.gif" alt="GIF as Video">
-
     </div>
   `,
   styles: `

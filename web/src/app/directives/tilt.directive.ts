@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, Inject } from '@angular/core';
 import Tilt, { TiltOptions } from 'vanilla-tilt';
 
 @Directive({
@@ -6,7 +6,7 @@ import Tilt, { TiltOptions } from 'vanilla-tilt';
   standalone: true,
 })
 export class TiltDirective implements AfterViewInit {
-  constructor(private elementRef: ElementRef) {}
+  constructor( private elementRef: ElementRef) {}
   ngAfterViewInit(): void {
     const options: TiltOptions = {
       max: 25, // Max tilt rotation in degrees

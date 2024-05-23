@@ -1,10 +1,9 @@
-import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'navbar',
   standalone: true,
   imports: [],
-  encapsulation: ViewEncapsulation.None,
   template: `
     <nav
       class="navbar fixed-top navbar-expand-lg navbar-light bg-light  w-100"

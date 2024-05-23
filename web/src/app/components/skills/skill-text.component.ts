@@ -5,7 +5,6 @@ import { TiltDirective } from '../../directives/tilt.directive';
   selector: 'skill-text',
   standalone: true,
   imports: [TiltDirective],
-  encapsulation: ViewEncapsulation.None,
   template: `
     <section class="m-5 position-relative" >
       <div
