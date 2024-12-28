@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="swiper">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a [routerLink]="['']">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Projects</li>
+            </ol>
+        </nav>
+        <h1 class="text-center m-5" >My projects</h1>
+        <div class="row">
+          @for (item of projects; track $index) {
+            <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12" style="margin-bottom: 16px;">
+                <div class="card">
+                  <img class="card-img-top" [src]="item.images">
+                  <div class="card-body">
+                    <div>
+                      <h5 class="card-title">{{item.title}}</h5>
+                      <p class="card-text">{{item.description}}</p>
+                    </div>
+                    <div>
+                      <span class="badge bg-primary">angular</span>
+                      <span class="badge bg-primary">opensource</span>
+                      <span class="badge bg-primary">free</span>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <a target="_blank" href="https://github.com/devfaisalkhan/adminlte-angular-dashboard">
+                        <img src="/assets/icons/github-icon.svg" alt="" style="width: 20px; height: 20px;">
+                    </a>
+                    <a target="_blank" href="https://devfaisalkhan.github.io/adminlte-angular-dashboard/">
+                        <img src="/assets/icons/link-hyperlink-icon.svg" alt="" style="width: 20px; height: 20px;">
+                      </a>
+                  </div>
+                </div>
+              </div>
+          }
+        </div>
+          
+        <!-- <div class="row projects" >
+          @for (proj of projects; track $index) {
+            <div class="card bg-dark m-4" style="" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
+            <div class="card-body text-white">
+            <swiper-container pagination="true" >
+              @for(img of proj.images; track $index ) {
+                <swiper-slide>
+                  <img [src]="img" alt="" loading="lazy">
+                </swiper-slide>
+              }
+            </swiper-container>
+              <h5 class="card-title">{{ proj.title }}</h5>
+              <p class="card-text">
+                {{ proj.description }}
+              </p>
+            </div>
+          </div>
+          }
+        </div> -->
+      </div>
+</div>

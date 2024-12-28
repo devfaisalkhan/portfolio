@@ -6,9 +6,6 @@ import { ElementRef, Injectable } from '@angular/core';
 export class ParallaxService {
 
   constructor() { }
-
-
-  
   applyParallax(elem: HTMLElement) {
     // Add event listener
     window.addEventListener('mousemove', parallax);

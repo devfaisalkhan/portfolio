@@ -104,7 +104,6 @@ function createTree() {
             // scale = 1.5
             // zoomListener.scale(1.5);
             // svgGroup.attr("transform", "translate(" + d3.event.translate + ")scale(" + scale + ")");
-
         }
         function zoom() {
             svgGroup.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");

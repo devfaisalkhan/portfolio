@@ -1,0 +1,67 @@
+
+home{
+  body{
+  }
+  section{
+  }
+  .container {
+    overflow: hidden;
+
+    .tagline {
+      margin-top: 100px;
+      position: relative;
+      .title {
+        // z-index: 99;
+      }
+      .image {
+        img {
+          width: 100% !important;
+        }
+      }
+      .tagline-title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        width: 500px;
+        height: 200px;
+        .front-end,
+        .back-end {
+          color: transparent;
+          background-image: linear-gradient(
+            to right,
+            white,
+            rgba(255, 308, 255, 0.7)
+          ); // Gradient for text
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+  
+        .creativity {
+          color: transparent;
+          background-image: linear-gradient(
+            to right,
+            #3498db,
+            #9b59b6
+          ); // Gradient for text
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 786px) {
+    /* Your CSS styles for mobile devices go here */
+  
+    .image {
+      img {
+        width: 100% !important;
+        height: 100%;
+      }
+    }
+    .tagline-title {
+      font-size: 2rem !important;
+      width: 96% !important;
+    }
+  }
+  
+}

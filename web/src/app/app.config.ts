@@ -6,6 +6,6 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideExperimentalZonelessChangeDetection(),
-    provideRouter(routes, withHashLocation())
+    provideRouter(routes)
   ],
 };

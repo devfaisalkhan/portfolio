@@ -63,6 +63,7 @@ import { EncryptionVideoComponent } from './encryption-video.component';
             .main{
               z-index: 9;
               cursor: pointer;
+              
             }
             &:hover{
                 .top{

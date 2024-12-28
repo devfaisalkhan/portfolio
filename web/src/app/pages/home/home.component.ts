@@ -12,6 +12,7 @@ import * as AOS from 'aos';
 import { ContactComponent } from '../../components/contact.component';
 import { AboutComponent } from '../../components/about.component';
 import { FloatingManComponent } from '../../components/flaoting-man.component';
+import { StarsBgComponent } from '../../components/stars-bg.componen';
 @Component({
   selector: 'home',
   standalone: true,
@@ -25,7 +26,8 @@ import { FloatingManComponent } from '../../components/flaoting-man.component';
     ProjectsComponent,
     ContactComponent,
     AboutComponent,
-    FloatingManComponent
+    FloatingManComponent,
+    StarsBgComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

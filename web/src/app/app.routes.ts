@@ -5,7 +5,12 @@ export const routes: Route[] = [
   {
     path: '',
     loadComponent: () =>
-      import('../app/modules/home/home.component').then((c) => c.HomeComponent),
+      import('./pages/home/home.component').then((c) => c.HomeComponent),
+  },
+  {
+    path: 'projects',
+    loadComponent: () =>
+      import('./pages/projects/projects.component').then((c) => c.ProjectsComponent),
   },
   { path: '**', redirectTo: '/home' },
 ];

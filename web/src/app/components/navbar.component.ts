@@ -1,12 +1,15 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'navbar',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   template: `
     <nav
-      class="navbar fixed-top navbar-expand-lg navbar-light bg-light  w-100"
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+      class="navbar navbar-expand-lg navbar-light bg-light  w-100"
     >
       <div class="container-fluid">
         <!-- <a class="navbar-brand">Faisal Khan</a> -->
@@ -25,14 +28,17 @@ import { Component, ViewEncapsulation } from '@angular/core';
           class="collapse navbar-collapse justify-content-center"
           id="navbarSupportedContent"
         >
-          <ul class="navbar-nav d-flex justify-content-between align-items-center w-50 w-5" >
+          <ul class="navbar-nav d-flex justify-content-between align-items-center " >
+          <li class="nav-item" [routerLink]="['']">
+              <a class="nav-link name" aria-current="page">DEVFAISAL</a>
+            </li>
             <li class="nav-item" (click)="scrollToElement('about')">
               <a class="nav-link " aria-current="page">About me</a>
             </li>
             <li class="nav-item" (click)="scrollToElement('skills')">
               <a class="nav-link " aria-current="page">Skills</a>
             </li>
-            <li class="nav-item" (click)="scrollToElement('projects')">
+            <li class="nav-item" [routerLink]="['/projects']">
               <a class="nav-link " aria-current="page">Projects</a>
             </li>
 
@@ -50,20 +56,26 @@ import { Component, ViewEncapsulation } from '@angular/core';
   `,
   styles: `
     .navbar{
-      box-shadow: 0 0 20px 3px #2a0e61 !important;
+      // box-shadow: 0 0 20px 3px #2a0e61 !important;
       background-color: #03001417 !important;
       backdrop-filter: blur(20px);
       color: #fff !important;
       z-index: 99999;
 
     }
+    .container-fluid{
+      margin: 12px 0;
+    }
     .navbar-brand{
       color:#fff !important;
       
     }
+
+    .name{
+      font-size: 24px;
+      opacity: 1 !important;
+    }
     .navbar-nav{
-      border-radius: 20px;
-      border: 1px solid;
       background: #0300145e;
       .nav-item{
         cursor: pointer;
@@ -72,14 +84,18 @@ import { Component, ViewEncapsulation } from '@angular/core';
     .nav-link{
       margin: 0 16px;
       color:#fff !important;
+      font-weight: bold;
+      opacity: .5;
     }
     button{
       background:#fff !important;
 
     }
     .nav-link:hover{
-      color: inherit !important;
+      color: #bb86fc !important;
+      opacity: 1;
     }
+
 
     .navbar-brand{
       font-family: monospace;

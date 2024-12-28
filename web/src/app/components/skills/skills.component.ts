@@ -27,15 +27,14 @@ import { TiltDirective } from '../../directives/tilt.directive';
         class="images object-fit-cover d-flex justify-content-evenly flex-shrink-1 m-4"
       >
         @for(image of frontEnd; track $index) {
-        <img
-          class="object-fit-cover m-2"
-          [ngSrc]="image"
-          tilt
-          width="60"
-          height="60"
-          class="rounded"
-          loading="lazy"
-        />
+          <div class="img">
+          <img
+            class="object-fit-cover m-2"
+            [src]="image"
+            tilt
+            loading="lazy"
+          />
+          </div>
         }
       </div>
       <div
@@ -45,15 +44,14 @@ import { TiltDirective } from '../../directives/tilt.directive';
         class="images object-fit-cover d-flex justify-content-evenly flex-shrink-1 m-4"
       >
         @for(image of backend; track $index) {
-        <img
-          class="object-fit-cover"
-          [ngSrc]="image"
-          tilt
-          width="60"
-          height="60"
-          class="rounded "
-          loading="lazy"
-        />
+          <div class="img">
+          <img
+            class="object-fit-cover m-2"
+            [src]="image"
+            tilt
+            loading="lazy"
+          />
+          </div>
         }
       </div>
     </section>
@@ -66,8 +64,18 @@ import { TiltDirective } from '../../directives/tilt.directive';
             flex-wrap: wrap !important;
             overflow: hidden ;
             position: relative;
+            z-index: 99;
+            .img{
+              transition: transform 0.3s;
+              
+              &:hover{
+                transform: scale(1.5);
+              }
+            }
             img{
               margin: 8px 16px;
+              width: 60px;
+              height: 60px;
             }
            }
         }

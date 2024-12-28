@@ -5,11 +5,7 @@ import * as d3 from 'd3';
   providedIn: 'root'
 })
 export class TreeService {
-
   constructor() { }
-
   createTree(): void {
-    console.log("d3 called");
-
   }
 }
