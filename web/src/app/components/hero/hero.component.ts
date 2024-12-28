@@ -147,7 +147,6 @@ export class HeroComponent implements AfterViewInit {
     .pause(1000) 
     .delete('', { delay: 500 }) // Delete everything
     .type('Let’s code the extraordinary!', { delay: 300 }) 
-    .delete('', { delay: 500 }) // Delete everything
     .go();
     
     
