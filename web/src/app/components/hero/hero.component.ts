@@ -28,10 +28,10 @@ import { FloatingManComponent } from '../flaoting-man.component';
 
       <div class="link-icons">
         <a href="https://github.com/devfaisalkhan/" target="_blank">
-        <img src='/assets/icons/github-white-icon.svg'>
+        <img [src]='ghImg'>
       </a>
         <a href="https://www.linkedin.com/in/devfaisalkhan/" target="_blank">
-        <img src='/assets/icons/linkedin-app-icon.svg' >
+        <img [src]='linkedinImg' >
         </a>
       </div>
     </div>
@@ -100,6 +100,8 @@ import { FloatingManComponent } from '../flaoting-man.component';
     `,
 })
 export class HeroComponent implements AfterViewInit {
+  ghImg = '/assets/icons/github-white-icon.svg';
+  linkedinImg = '/assets/icons/linkedin-app-icon.svg'
   constructor() {}
   ngAfterViewInit(): void {
 
