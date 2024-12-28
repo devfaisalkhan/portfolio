@@ -100,11 +100,10 @@ import { FloatingManComponent } from '../flaoting-man.component';
     `,
 })
 export class HeroComponent implements AfterViewInit {
-  ghImg = '/assets/icons/github-white-icon.svg';
-  linkedinImg = '/assets/icons/linkedin-app-icon.svg'
+  ghImg = 'assets/icons/github-white-icon.svg';
+  linkedinImg = 'assets/icons/linkedin-app-icon.svg'
   constructor() {}
   ngAfterViewInit(): void {
-
     new TypeIt('.tagline-title', {
       beforeStep:  function (instance: any) {
         instance.getElement().style.color = '#fff';
