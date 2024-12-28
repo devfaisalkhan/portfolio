@@ -28,10 +28,10 @@ import { FloatingManComponent } from '../flaoting-man.component';
 
       <div class="link-icons">
         <a href="https://github.com/devfaisalkhan/" target="_blank">
-        <img src="/assets/icons/github-white-icon.svg" >
+        <img src='/assets/icons/github-white-icon.svg'>
       </a>
         <a href="https://www.linkedin.com/in/devfaisalkhan/" target="_blank">
-        <img src="/assets/icons/linkedin-app-icon.svg" >
+        <img src='/assets/icons/linkedin-app-icon.svg' >
         </a>
       </div>
     </div>
