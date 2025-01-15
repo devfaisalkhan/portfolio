@@ -44,7 +44,7 @@ export class ContactComponent {
       message: message
     };
 
-    this.helperSvc.presentLoader('Sending mail');
+    this.helperSvc.presentLoader('Sending mail'); 
     try {
 
       const response = await fetch('https://mailer-production-5144.up.railway.app/sendMail', {
