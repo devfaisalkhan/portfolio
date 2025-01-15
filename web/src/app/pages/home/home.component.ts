@@ -46,7 +46,6 @@ export class HomeComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     AOS.init({});
-
   }
 
   
@@ -54,10 +53,10 @@ export class HomeComponent implements AfterViewInit {
     this.renderer.setStyle(document.body, 'background-color', color);
     this.renderer.setStyle(document.body, 'color', textColor);
     
-    const navbar = document.querySelectorAll('.nav-link')as NodeListOf<HTMLElement>;
-    navbar.forEach((item: HTMLElement) => {
-      item.style.color = '#fff'; // Change the color of each item
-    });
+    // const navbar = document.querySelectorAll('.nav-link')as NodeListOf<HTMLElement>;
+    // navbar.forEach((item: HTMLElement) => {
+    //   item.style.color = '#fff'; // Change the color of each item
+    // });
    
   }
 

@@ -1,26 +1,30 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, viewChild, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import emailjs from 'emailjs-com';
+import { HelperService } from '../../services/helper.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   imports: [CommonModule, ReactiveFormsModule, FormsModule],
-  standalone: true
+  standalone: true,
+  encapsulation: ViewEncapsulation.None
 })
 export class ContactComponent {
   contactForm: FormGroup;
-  statusMessage: string | null = null;
+  statusMessage: boolean | null = null;
+  statusMessageType = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private helperSvc: HelperService) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required]]
     });
+
   }
+ 
 
   get name() { return this.contactForm.get('name'); }
   get email() { return this.contactForm.get('email'); }
@@ -29,7 +33,6 @@ export class ContactComponent {
   async sendEmail(event: Event) {
     event.preventDefault();
     if (this.contactForm.invalid) {
-      this.statusMessage = 'Please fill all fields correctly.';
       return;
     }
 
@@ -41,7 +44,9 @@ export class ContactComponent {
       message: message
     };
 
+    this.helperSvc.presentLoader('Sending mail');
     try {
+
       const response = await fetch('https://mailer-production-5144.up.railway.app/sendMail', {
         method: 'POST',
         headers: {
@@ -50,19 +55,16 @@ export class ContactComponent {
         body: JSON.stringify(requestData)
       });
 
-      if (response.ok) {
-        this.statusMessage = 'Your message has been sent successfully!';
-        this.contactForm.reset();
-      } else {
-        this.statusMessage = 'Failed to send message, please try again later.';
-        this.contactForm.reset();
-      }
-    } catch (error) {
-      this.statusMessage = 'Error sending message. Please try again.';
-      console.error('Error:', error);
-    }
+      const data = await response.json();
 
-    // this.clearStatusMessage(); 
+      if (response.ok) {
+        this.helperSvc.presentAlert(data.message, 'success')
+      }
+    } catch (error: any) {
+      this.helperSvc.presentAlert(error, 'error');
+    } finally {
+      this.helperSvc.dismissLoader();
+    }
   }
 
   clearStatusMessage() {

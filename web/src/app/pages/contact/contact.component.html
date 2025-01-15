@@ -43,12 +43,7 @@
           </form>
   
           <div *ngIf="statusMessage" class="message mt-4 text-center">
-            <div *ngIf="statusMessage.includes('success')" class="alert alert-success rounded-3">
-              {{ statusMessage }}
-            </div>
-            <div *ngIf="statusMessage.includes('error')" class="alert alert-danger rounded-3">
-              {{ statusMessage }}
-            </div>
+            Email has been sent.
           </div>
         </div>
       </div>

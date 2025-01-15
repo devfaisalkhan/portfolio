@@ -75,7 +75,7 @@ import { NavigationEnd, Router, RouterLink } from '@angular/router';
     }
     .nav-link{
       margin: 0 16px;
-      color: #fff ;
+      color: #fff !important;
       font-weight: bold;
       opacity: .5;
     }
