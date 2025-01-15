@@ -1,0 +1,57 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg p-5" style="background-color: #030014; border-radius: 15px; color: white;">
+          <h2 class="text-center mb-4 text-white">Contact Me</h2>
+  
+          <form [formGroup]="contactForm" (ngSubmit)="sendEmail($event)">
+            <!-- Name Field -->
+            <div class="form-group mb-4">
+              <label for="name" class="text-white">Your Name</label>
+              <input id="name" type="text" formControlName="name" class="form-control bg-dark text-white border-0 rounded-3"
+                [ngClass]="{'is-invalid': name?.invalid && (name?.touched || name?.dirty)}" placeholder="Enter your name" />
+              <div *ngIf="name?.invalid && (name?.touched || name?.dirty)" class="invalid-feedback">
+                <small *ngIf="name?.hasError('required')">Name is required.</small>
+                <small *ngIf="name?.hasError('minlength')">Name must be at least 3 characters long.</small>
+              </div>
+            </div>
+  
+            <!-- Email Field -->
+            <div class="form-group mb-4">
+              <label for="email" class="text-white">Your Email</label>
+              <input id="email" type="email" formControlName="email" class="form-control bg-dark text-white border-0 rounded-3"
+                [ngClass]="{'is-invalid': email?.invalid && (email?.touched || email?.dirty)}" placeholder="Enter your email" />
+              <div *ngIf="email?.invalid && (email?.touched || email?.dirty)" class="invalid-feedback">
+                <small *ngIf="email?.hasError('required')">Email is required.</small>
+                <small *ngIf="email?.hasError('email')">Enter a valid email address.</small>
+              </div>
+            </div>
+  
+            <!-- Message Field -->
+            <div class="form-group mb-4">
+              <label for="message" class="text-white">Your Message</label>
+              <textarea id="message" formControlName="message" class="form-control bg-dark text-white border-0 rounded-3"
+                rows="5" placeholder="Write your message here..." [ngClass]="{'is-invalid': message?.invalid && (message?.touched || message?.dirty)}"></textarea>
+              <div *ngIf="message?.invalid && (message?.touched || message?.dirty)" class="invalid-feedback">
+                <small *ngIf="message?.hasError('required')">Message is required.</small>
+                <small *ngIf="message?.hasError('minlength')">Message must be at least 10 characters long.</small>
+              </div>
+            </div>
+  
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary text-bg-dark w-100 rounded-3 py-2" [disabled]="contactForm.invalid">Send Message</button>
+          </form>
+  
+          <div *ngIf="statusMessage" class="message mt-4 text-center">
+            <div *ngIf="statusMessage.includes('success')" class="alert alert-success rounded-3">
+              {{ statusMessage }}
+            </div>
+            <div *ngIf="statusMessage.includes('error')" class="alert alert-danger rounded-3">
+              {{ statusMessage }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

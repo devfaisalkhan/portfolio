@@ -8,9 +8,9 @@ export const routes: Route[] = [
       import('./pages/home/home.component').then((c) => c.HomeComponent),
   },
   {
-    path: 'projects',
+    path: 'contact',
     loadComponent: () =>
-      import('./pages/projects/projects.component').then((c) => c.ProjectsComponent),
+      import('./pages/contact/contact.component').then((c) => c.ContactComponent),
   },
-  { path: '**', redirectTo: '/home' },
+  { path: '**', redirectTo: '' },
 ];

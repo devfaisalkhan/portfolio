@@ -1,4 +1,4 @@
-import { AfterViewInit, CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, Renderer2, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { SkillsComponent } from '../../components/skills/skills.component';
 
@@ -35,8 +35,30 @@ import { StarsBgComponent } from '../../components/stars-bg.componen';
 })
 export class HomeComponent implements AfterViewInit {
 
-  constructor() {}
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef
+  ) {}
+
+  ngOnInit(): void {
+    this.changeBodyColor('#030014', '#fff');
+  }
+
   ngAfterViewInit() {
     AOS.init({});
+
   }
+
+  
+  changeBodyColor(color: string, textColor: string): void {
+    this.renderer.setStyle(document.body, 'background-color', color);
+    this.renderer.setStyle(document.body, 'color', textColor);
+    
+    const navbar = document.querySelectorAll('.nav-link')as NodeListOf<HTMLElement>;
+    navbar.forEach((item: HTMLElement) => {
+      item.style.color = '#fff'; // Change the color of each item
+    });
+   
+  }
+
 }

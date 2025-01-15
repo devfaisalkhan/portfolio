@@ -10,7 +10,7 @@ import { ParallaxService } from '../services/parallax.service';
     <div class="pulsate">
         <div #elem class="parallax" ></div>
      </div>
-    <div #shadow class="circle shadow" [style.top]="top" [style.left]="left" ></div>
+    <!-- <div #shadow class="circle shadow" [style.top]="top" [style.left]="left" ></div> -->
   `,
   styles: `
     .parallax {
@@ -95,22 +95,20 @@ export class FloatingManComponent {
        this.parallaxService.applyParallax(this.elem.nativeElement);
        this.renderer.setStyle(this.elem.nativeElement, 'background-image', `url(${this.bgImageUrl})`);
 
-       this.renderer.listen(
-         'document',
-         'mousemove',
-         (event: MouseEvent) => {
-           this.mouseX = event.clientX;
-           this.mouseY = event.clientY;
-           this.updatePosition();
-         }
-       );
+      //  this.renderer.listen(
+      //    'document',
+      //    'mousemove',
+      //    (event: MouseEvent) => {
+      //      this.mouseX = event.clientX;
+      //      this.mouseY = event.clientY;
+      //     //  this.updatePosition();
+      //    }
+      //  );
        // this.parallaxService.applyParallax1(this.elem1.nativeElement);
        
      }
    
      updatePosition() {
-      console.log('as');
-      
        this.shadow.nativeElement.style.top = this.mouseY + 'px';
        this.shadow.nativeElement.style.left = this.mouseX + 'px';
      }  

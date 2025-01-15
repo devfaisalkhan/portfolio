@@ -1,16 +1,14 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'navbar',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   template: `
     <nav
-        data-aos="flip-left"
-        data-aos-easing="ease-out-cubic"
-      class="navbar navbar-expand-lg navbar-light bg-light  w-100"
-    >
+      class="navbar navbar-expand-lg w-100">
       <div class="container-fluid">
         <!-- <a class="navbar-brand">Faisal Khan</a> -->
         <button
@@ -30,25 +28,23 @@ import { RouterLink } from '@angular/router';
         >
           <ul class="navbar-nav d-flex justify-content-between align-items-center " >
           <li class="nav-item" [routerLink]="['']">
-              <a class="nav-link name" aria-current="page">DEVFAISAL</a>
-            </li>
-            <li class="nav-item" (click)="scrollToElement('about')">
-              <a class="nav-link " aria-current="page">About me</a>
-            </li>
-            <li class="nav-item" (click)="scrollToElement('skills')">
-              <a class="nav-link " aria-current="page">Skills</a>
-            </li>
-            <li class="nav-item" [routerLink]="['/projects']">
-              <a class="nav-link " aria-current="page">Projects</a>
-            </li>
-
-            <li class="nav-item" (click)="scrollToElement('contact')">
-              <a class="nav-link " aria-current="page">Contact</a>
-            </li>
-
-            <li class="nav-item" (click)="onResumeClicked()">
-              <a class="nav-link " aria-current="page">Resume</a>
-            </li>
+            <a class="nav-link name" [ngStyle]="{ color: linkColor }" aria-current="page">DEVFAISAL</a>
+          </li>
+          <!-- <li class="nav-item" (click)="scrollToElement('about')">
+            <a class="nav-link" [ngStyle]="{ color: linkColor }" aria-current="page">About me</a>
+          </li>
+          <li class="nav-item" (click)="scrollToElement('skills')">
+            <a class="nav-link" [ngStyle]="{ color: linkColor }" aria-current="page">Skills</a>
+          </li>
+          <li class="nav-item" [routerLink]="['/projects']">
+            <a class="nav-link" [ngStyle]="{ color: linkColor }" aria-current="page">Projects</a>
+          </li> -->
+          <li class="nav-item" [routerLink]="['/contact']">
+            <a class="nav-link" [ngStyle]="{ color: linkColor }" aria-current="page">Contact</a>
+          </li>
+          <li class="nav-item" (click)="onResumeClicked()">
+            <a class="nav-link" [ngStyle]="{ color: linkColor }" aria-current="page">Resume</a>
+          </li>
           </ul>
         </div>
       </div>
@@ -56,12 +52,8 @@ import { RouterLink } from '@angular/router';
   `,
   styles: `
     .navbar{
-      // box-shadow: 0 0 20px 3px #2a0e61 !important;
-      background-color: #03001417 !important;
-      backdrop-filter: blur(20px);
-      color: #fff !important;
+      // backdrop-filter: blur(20px);
       z-index: 99999;
-
     }
     .container-fluid{
       margin: 12px 0;
@@ -76,14 +68,14 @@ import { RouterLink } from '@angular/router';
       opacity: 1 !important;
     }
     .navbar-nav{
-      background: #0300145e;
+      // background: #0300145e;
       .nav-item{
         cursor: pointer;
       }
     }
     .nav-link{
       margin: 0 16px;
-      color:#fff !important;
+      color: #fff ;
       font-weight: bold;
       opacity: .5;
     }
@@ -109,8 +101,8 @@ import { RouterLink } from '@angular/router';
       }
 
       .navbar-nav{
-      border: none;
-      background: none;
+        border: none;
+        background: none;
       .nav-item{
         cursor: default;
       }
@@ -120,9 +112,33 @@ import { RouterLink } from '@angular/router';
     }
 
   `,
+  encapsulation: ViewEncapsulation.None
 })
-export class NavbarComponent {
-  constructor() {}
+export class NavbarComponent implements OnInit {
+  linkColor = '#000';
+  constructor(
+    private renderer: Renderer2,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.changeColors('#000')
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        // Change the navbar color after each navigation
+        this.changeColors('#000')
+      }
+    });
+  }
+
+  changeColors(textColor: string) {
+    const navbar = document.querySelectorAll('.nav-link')as NodeListOf<HTMLElement>;
+    navbar.forEach((item: HTMLElement) => {
+      this.renderer.setStyle(item, 'color', textColor) // Change the color of each item
+    });
+  }
+
+
   scrollToElement(section: string): void {
     const element = document.getElementById(section);
     if (element) {
