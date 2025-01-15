@@ -2,16 +2,14 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CardsVideoComponent } from './skills-video.component';
 import { SkillTextComponent } from './skill-text.component';
-import { TiltDirective } from '../../directives/tilt.directive';
 
 @Component({
   selector: 'skills',
   standalone: true,
   imports: [
     NgOptimizedImage,
-    TiltDirective,
     CardsVideoComponent,
-    SkillTextComponent,
+    SkillTextComponent
   ],
   encapsulation: ViewEncapsulation.None,
   template: `
@@ -31,7 +29,6 @@ import { TiltDirective } from '../../directives/tilt.directive';
           <img
             class="object-fit-cover m-2"
             [src]="image"
-            tilt
             loading="lazy"
           />
           </div>

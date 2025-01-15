@@ -8,7 +8,7 @@ import { HeroComponent } from '../../components/hero/hero.component';
 import { EncryptionComponent } from '../../components/encryption/encryption.component';
 import { ProjectsComponent } from '../../components/projects.component';
 
-import * as AOS from 'aos';
+import  AOS from 'aos';
 import { ContactComponent } from '../../components/contact.component';
 import { AboutComponent } from '../../components/about.component';
 import { FloatingManComponent } from '../../components/flaoting-man.component';

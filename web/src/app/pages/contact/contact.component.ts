@@ -58,8 +58,10 @@ export class ContactComponent {
       const data = await response.json();
 
       if (response.ok) {
-        this.helperSvc.presentAlert(data.message, 'success')
+        this.helperSvc.presentAlert(data.message, 'success');
+        this.contactForm.reset();
       }
+
     } catch (error: any) {
       this.helperSvc.presentAlert(error, 'error');
     } finally {

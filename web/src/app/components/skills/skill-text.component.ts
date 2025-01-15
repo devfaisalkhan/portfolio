@@ -1,10 +1,9 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { TiltDirective } from '../../directives/tilt.directive';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'skill-text',
   standalone: true,
-  imports: [TiltDirective],
+  imports: [],
   template: `
     <section class="m-5 position-relative" >
       <div
@@ -12,7 +11,6 @@ import { TiltDirective } from '../../directives/tilt.directive';
       >
         <h6
           data-aos="fade-up-left"
-          tilt
           class="d-flex align-items-center position-relative justify-content-center m-2"
         >
           <img src="assets/images/stars.svg" style="margin: 0 12px;"/>

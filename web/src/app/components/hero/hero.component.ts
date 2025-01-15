@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, ViewEncapsulation } from '@angular/core';
 import { HeroVideoComponent } from './hero-video.component';
 import { NgOptimizedImage } from '@angular/common';
-import { TiltDirective } from '../../directives/tilt.directive';
 import TypeIt from 'typeit';
 import { FloatingManComponent } from '../flaoting-man.component';
 
@@ -9,7 +8,7 @@ import { FloatingManComponent } from '../flaoting-man.component';
 @Component({
   selector: 'hero',
   standalone: true,
-  imports: [HeroVideoComponent, NgOptimizedImage, TiltDirective, FloatingManComponent],
+  imports: [HeroVideoComponent, NgOptimizedImage, FloatingManComponent],
   encapsulation: ViewEncapsulation.None,
   template: `
    <section class="hero"> 

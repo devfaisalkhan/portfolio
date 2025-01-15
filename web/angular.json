@@ -20,6 +20,10 @@
             "outputPath": "dist/",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "allowedCommonJsDependencies": [
+              "aos",
+              "sweetalert2"
+            ],
             "polyfills": [
             ],
             "tsConfig": "tsconfig.app.json",
@@ -42,7 +46,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "950kb",
                   "maximumError": "1mb"
                 },
                 {
