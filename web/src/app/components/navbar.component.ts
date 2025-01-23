@@ -54,6 +54,10 @@ import { NavigationEnd, Router, RouterLink } from '@angular/router';
     .navbar{
       // backdrop-filter: blur(20px);
       z-index: 99999;
+      position: fixed !important;
+      top: 0;
+      right: 0;
+      left: 0;
     }
     .container-fluid{
       margin: 12px 0;
