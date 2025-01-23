@@ -8,7 +8,7 @@ import { NavigationEnd, Router, RouterLink } from '@angular/router';
   imports: [RouterLink, CommonModule],
   template: `
     <nav
-      class="navbar navbar-expand-lg w-100">
+      class="navbar position-fixed navbar-expand-lg w-100">
       <div class="container-fluid">
         <!-- <a class="navbar-brand">Faisal Khan</a> -->
         <button
