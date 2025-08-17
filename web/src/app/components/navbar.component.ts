@@ -151,7 +151,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onResumeClicked() {
-    window.open('https://drive.google.com/file/d/1BiyB-OCtl1wxSEIxnXkPsRiV2YyOpheg/view?usp=sharing');
+    window.open('https://drive.google.com/file/d/1Ug9RpANCvR8dtZtH2xxxIbqvTksD93OM/view?usp=sharing');
   }
 }
  
